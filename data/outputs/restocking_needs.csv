@@ -1,0 +1,4 @@
+material_name,total_material_needed,current_stock,minimum_stock_level,cost_per_unit,shortage,needs_restocking,restock_quantity,restock_cost
+Mixed Vegetables,50.699999999999996,15,18,26.84794916549265,35.699999999999996,True,35.699999999999996,958.4717852080875
+Pasta,31.0,10,11,2.9705751815616566,21.0,True,21.0,62.38207881279479
+Fish Fillet,24.25,24,14,8.480705588017054,0.25,True,0.25,2.1201763970042635
