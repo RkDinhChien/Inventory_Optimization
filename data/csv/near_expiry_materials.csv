@@ -1,4 +1,5 @@
 material_name,current_stock,unit,expiry_date,cost_per_unit,minimum_stock_level,dish_name,quantity_needed,max_dishes_possible,days_until_expiry
-Chicken Breast,78,kg,2025-09-30 23:39:08.538641,10.820075650638648,8,Chicken Curry,0.3,260,0
-Pasta,18,pieces,2025-10-01 23:39:08.538641,13.171923521673364,17,Pasta Marinara,0.2,90,1
-Olive Oil,79,pieces,2025-10-02 23:39:08.538641,14.561001260634416,15,Vegetable Salad,0.02,3950,2
+Mixed Vegetables,88,kg,2025-09-30 23:46:42.063118,49.729667195318434,15,Vegetable Salad,0.3,293,0
+Olive Oil,72,pieces,2025-10-01 23:46:42.063118,27.973631951414667,13,Vegetable Salad,0.02,3600,1
+Chicken Breast,48,kg,2025-10-02 23:46:42.063118,9.210654573520861,10,Chicken Curry,0.3,160,2
+Pepper,73,pieces,2025-10-02 23:46:42.063118,42.15624787100434,19,Beef Steak,0.01,7300,2
