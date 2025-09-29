@@ -111,8 +111,8 @@ dashboard.show()
 The system generates:
 
 1. **Console Report**: Summary of key metrics and recommendations
-2. **CSV Files**: Detailed data exports in `data/outputs/`
-3. **Visualizations**: Charts saved as PNG files
+2. **CSV Files**: Detailed data exports in `data/csv/`
+3. **PNG Charts**: Visualizations saved in `data/png/`
 4. **Interactive Dashboard**: HTML file with interactive plots
 
 ## Key Metrics

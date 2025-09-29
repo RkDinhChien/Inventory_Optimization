@@ -51,7 +51,7 @@ def quick_demo():
         print(f"   🟢 Inventory levels optimal!")
     
     print("\n✅ Demo complete! Run 'python main.py' for full analysis.")
-    print("📁 Check 'data/outputs/' for detailed reports and charts.")
+    print("📁 Check 'data/csv/' for CSV files and 'data/png/' for charts.")
 
 if __name__ == "__main__":
     quick_demo()
