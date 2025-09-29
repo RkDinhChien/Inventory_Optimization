@@ -1,4 +1,4 @@
 material_name,current_stock,unit,expiry_date,cost_per_unit,minimum_stock_level,dish_name,quantity_needed,max_dishes_possible,days_until_expiry
-Beef Tenderloin,58,kg,2025-10-01 20:17:16.928835,27.261821836314034,5,Beef Steak,0.4,145,1
-Onions,62,pieces,2025-10-01 20:17:16.928835,23.727757870775505,9,Chicken Curry,0.1,620,1
-Onions,62,pieces,2025-10-01 20:17:16.928835,23.727757870775505,9,Fish Soup,0.1,620,1
+Chicken Breast,78,kg,2025-09-30 23:39:08.538641,10.820075650638648,8,Chicken Curry,0.3,260,0
+Pasta,18,pieces,2025-10-01 23:39:08.538641,13.171923521673364,17,Pasta Marinara,0.2,90,1
+Olive Oil,79,pieces,2025-10-02 23:39:08.538641,14.561001260634416,15,Vegetable Salad,0.02,3950,2
