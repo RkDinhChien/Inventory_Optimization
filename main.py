@@ -76,34 +76,27 @@ def main():
     print("\n4. Generating visualizations...")
     
     try:
-        # Create data directory for outputs
-        os.makedirs('data/outputs', exist_ok=True)
+        # Create png directory for outputs
+        os.makedirs('data/png', exist_ok=True)
         
         print("   ✓ Creating demand forecast plot...")
-        visualizer.plot_demand_forecast(report['demand_forecast'], 'data/outputs/demand_forecast.png')
+        visualizer.plot_demand_forecast(report['demand_forecast'], 'data/png/demand_forecast.png')
         
         print("   ✓ Creating inventory status plot...")
-        visualizer.plot_inventory_status(optimizer.inventory_data, 'data/outputs/inventory_status.png')
+        visualizer.plot_inventory_status(optimizer.inventory_data, 'data/png/inventory_status.png')
         
         if not report['restocking_needs'].empty:
             print("   ✓ Creating restocking analysis plot...")
-            visualizer.plot_restocking_analysis(report['restocking_needs'], 'data/outputs/restocking_analysis.png')
+            visualizer.plot_restocking_analysis(report['restocking_needs'], 'data/png/restocking_analysis.png')
         
         if not report['near_expiry_materials'].empty:
             print("   ✓ Creating near-expiry materials plot...")
-            visualizer.plot_near_expiry_materials(report['near_expiry_materials'], 'data/outputs/near_expiry.png')
+            visualizer.plot_near_expiry_materials(report['near_expiry_materials'], 'data/png/near_expiry.png')
         
         print("   ✓ Creating seasonal trends plot...")
-        visualizer.plot_seasonal_trends(optimizer.orders_data, 'data/outputs/seasonal_trends.png')
+        visualizer.plot_seasonal_trends(optimizer.orders_data, 'data/png/seasonal_trends.png')
         
-        # Create interactive dashboard if plotly is available
-        try:
-            print("   ✓ Creating interactive dashboard...")
-            dashboard = visualizer.create_interactive_dashboard(report)
-            dashboard.write_html('data/outputs/interactive_dashboard.html')
-            print("   ✓ Interactive dashboard saved as HTML")
-        except ImportError:
-            print("   ! Plotly not available - skipping interactive dashboard")
+
             
     except Exception as e:
         print(f"   ! Warning: Some visualizations failed to generate: {str(e)}")
@@ -111,13 +104,16 @@ def main():
     # Save reports to CSV
     print("\n5. Saving detailed reports...")
     try:
-        report['demand_forecast'].to_csv('data/outputs/demand_forecast.csv', index=False)
+        # Create csv directory for outputs
+        os.makedirs('data/csv', exist_ok=True)
+        
+        report['demand_forecast'].to_csv('data/csv/demand_forecast.csv', index=False)
         if not report['restocking_needs'].empty:
-            report['restocking_needs'].to_csv('data/outputs/restocking_needs.csv', index=False)
+            report['restocking_needs'].to_csv('data/csv/restocking_needs.csv', index=False)
         if not report['near_expiry_materials'].empty:
-            report['near_expiry_materials'].to_csv('data/outputs/near_expiry_materials.csv', index=False)
-        optimizer.inventory_data.to_csv('data/outputs/current_inventory.csv', index=False)
-        print("   ✓ All reports saved to 'data/outputs/' directory")
+            report['near_expiry_materials'].to_csv('data/csv/near_expiry_materials.csv', index=False)
+        optimizer.inventory_data.to_csv('data/csv/current_inventory.csv', index=False)
+        print("   ✓ All reports saved to 'data/csv/' directory")
     except Exception as e:
         print(f"   ! Error saving reports: {str(e)}")
     
@@ -139,7 +135,7 @@ def main():
         print("   Continue monitoring and maintain current stock levels")
     
     print("\n" + "="*60)
-    print("Report complete! Check 'data/outputs/' for detailed files.")
+    print("Report complete! Check 'data/csv/' for CSV files and 'data/png/' for charts.")
     print("="*60)
 
 if __name__ == "__main__":

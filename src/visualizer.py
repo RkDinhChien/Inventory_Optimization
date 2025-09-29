@@ -1,8 +1,5 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
-import plotly.express as px
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 import pandas as pd
 import numpy as np
 from typing import Dict, List
@@ -170,89 +167,6 @@ class InventoryVisualizer:
         if save_path:
             plt.savefig(save_path, dpi=300, bbox_inches='tight')
         plt.show()
-    
-    def create_interactive_dashboard(self, report_data: Dict):
-        """
-        Create an interactive dashboard using Plotly.
-        """
-        # Create subplots
-        fig = make_subplots(
-            rows=2, cols=2,
-            subplot_titles=('Demand Forecast', 'Inventory Status', 'Restocking Costs', 'Expiry Timeline'),
-            specs=[[{"secondary_y": False}, {"secondary_y": False}],
-                   [{"secondary_y": False}, {"secondary_y": False}]]
-        )
-        
-        # 1. Demand Forecast
-        forecast_data = report_data['demand_forecast']
-        for dish in forecast_data['dish_name'].unique():
-            dish_data = forecast_data[forecast_data['dish_name'] == dish]
-            fig.add_trace(
-                go.Scatter(x=dish_data['date'], y=dish_data['predicted_quantity'],
-                          mode='lines+markers', name=dish, showlegend=True),
-                row=1, col=1
-            )
-        
-        # 2. Inventory Status (if restocking data exists)
-        if not report_data['restocking_needs'].empty:
-            restock_data = report_data['restocking_needs']
-            fig.add_trace(
-                go.Bar(x=restock_data['material_name'], y=restock_data['current_stock'],
-                      name='Current Stock', showlegend=True),
-                row=1, col=2
-            )
-            fig.add_trace(
-                go.Bar(x=restock_data['material_name'], y=restock_data['minimum_stock_level'],
-                      name='Min Level', showlegend=True),
-                row=1, col=2
-            )
-        
-        # 3. Restocking Costs
-        if not report_data['restocking_needs'].empty:
-            fig.add_trace(
-                go.Bar(x=report_data['restocking_needs']['material_name'],
-                      y=report_data['restocking_needs']['restock_cost'],
-                      name='Restock Cost', showlegend=False, marker_color='red'),
-                row=2, col=1
-            )
-        
-        # 4. Expiry Timeline
-        if not report_data['near_expiry_materials'].empty:
-            expiry_data = report_data['near_expiry_materials']
-            expiry_summary = expiry_data.groupby('material_name')['days_until_expiry'].min().reset_index()
-            
-            fig.add_trace(
-                go.Scatter(x=expiry_summary['material_name'], 
-                          y=expiry_summary['days_until_expiry'],
-                          mode='markers', name='Days to Expiry', 
-                          marker=dict(size=10, color=expiry_summary['days_until_expiry'],
-                                    colorscale='RdYlGn_r', showscale=True),
-                          showlegend=False),
-                row=2, col=2
-            )
-        
-        # Update layout
-        fig.update_layout(
-            title_text="Inventory Optimization Dashboard",
-            title_x=0.5,
-            showlegend=True,
-            height=800,
-            template="plotly_white"
-        )
-        
-        # Update x-axis labels
-        fig.update_xaxes(title_text="Date", row=1, col=1)
-        fig.update_xaxes(title_text="Material", row=1, col=2, tickangle=45)
-        fig.update_xaxes(title_text="Material", row=2, col=1, tickangle=45)
-        fig.update_xaxes(title_text="Material", row=2, col=2, tickangle=45)
-        
-        # Update y-axis labels
-        fig.update_yaxes(title_text="Quantity", row=1, col=1)
-        fig.update_yaxes(title_text="Stock Level", row=1, col=2)
-        fig.update_yaxes(title_text="Cost ($)", row=2, col=1)
-        fig.update_yaxes(title_text="Days", row=2, col=2)
-        
-        return fig
     
     def plot_seasonal_trends(self, orders_data: pd.DataFrame, save_path: str = None):
         """
