@@ -1,21 +1,44 @@
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Optional
 import warnings
 warnings.filterwarnings('ignore')
+
+try:
+    from src.ml_forecaster import MLForecaster
+    ML_AVAILABLE = True
+except ImportError:
+    ML_AVAILABLE = False
+    print("Warning: ML Forecaster not available. Using statistical methods only.")
 
 class InventoryOptimizer:
     """
     Main class for inventory optimization in F&B industry.
     Handles demand forecasting, restocking calculations, and near-expiry material utilization.
+    Supports both statistical methods and ML algorithms (SARIMA, XGBoost, Random Forest, Prophet).
     """
     
-    def __init__(self):
+    def __init__(self, use_ml: bool = False, ml_algorithm: str = 'sarima'):
+        """
+        Initialize Inventory Optimizer.
+        
+        Args:
+            use_ml: Whether to use Machine Learning for forecasting
+            ml_algorithm: ML algorithm to use ('sarima', 'xgboost', 'random_forest', 'prophet')
+        """
         self.orders_data = None
         self.inventory_data = None
         self.recipes_data = None
         self.seasonal_factors = None
+        self.use_ml = use_ml and ML_AVAILABLE
+        self.ml_algorithm = ml_algorithm
+        self.ml_forecaster = None
+        
+        if self.use_ml:
+            print(f"🤖 ML Mode enabled with algorithm: {ml_algorithm.upper()}")
+        else:
+            print("📊 Statistical forecasting mode")
         
     def load_data(self, orders_file: str = None, inventory_file: str = None, recipes_file: str = None):
         """Load data from files or create sample data for demonstration."""
@@ -141,7 +164,14 @@ class InventoryOptimizer:
     
     def forecast_demand(self, days_ahead: int = 7) -> pd.DataFrame:
         """
-        Forecast demand for the next specified days using historical data and seasonal factors.
+        Forecast demand for the next specified days.
+        Uses ML algorithms if enabled, otherwise uses statistical methods.
+        
+        Args:
+            days_ahead: Number of days to forecast
+            
+        Returns:
+            DataFrame with demand forecasts
         """
         if self.orders_data is None:
             raise ValueError("Orders data not loaded. Please load data first.")
@@ -149,6 +179,33 @@ class InventoryOptimizer:
         # Prepare historical data
         self.orders_data['date'] = pd.to_datetime(self.orders_data['date'])
         
+        # Use ML forecasting if enabled
+        if self.use_ml:
+            return self._forecast_with_ml(days_ahead)
+        else:
+            return self._forecast_statistical(days_ahead)
+    
+    def _forecast_with_ml(self, days_ahead: int) -> pd.DataFrame:
+        """
+        Forecast using Machine Learning algorithms.
+        """
+        print(f"\n🤖 Generating ML forecast using {self.ml_algorithm.upper()}...")
+        
+        # Initialize and train ML forecaster if not already done
+        if self.ml_forecaster is None:
+            self.ml_forecaster = MLForecaster(algorithm=self.ml_algorithm)
+            self.ml_forecaster.fit(self.orders_data)
+        
+        # Generate predictions
+        forecasts = self.ml_forecaster.predict(days_ahead=days_ahead)
+        
+        print(f"✅ ML forecast completed for {len(forecasts)} predictions\n")
+        return forecasts
+    
+    def _forecast_statistical(self, days_ahead: int) -> pd.DataFrame:
+        """
+        Forecast using statistical methods (original implementation).
+        """
         # Calculate average daily demand for each dish
         daily_avg = self.orders_data.groupby('dish_name')['quantity_sold'].mean()
         

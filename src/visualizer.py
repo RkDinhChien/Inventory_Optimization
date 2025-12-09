@@ -1,4 +1,13 @@
-import matplotlib.pyplot as plt
+# Bước 1: Cài Xcode Command Line Tools (5-10 phút)
+xcode-select --install
+
+# Bước 2: Auto setup (cài tất cả dependencies)
+cd "/Users/rykan/ĐỒ ÁN/Inventory_Optimization"
+./setup.sh
+
+# Bước 3: Test
+python3 demo_quick.py      # Demo nhanh
+python3 demo_ml.py         # So sánh ML algorithmsimport matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import numpy as np
