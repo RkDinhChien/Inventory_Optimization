@@ -113,20 +113,20 @@ try:
     print("💡 DISH RECOMMENDATIONS")
     print("="*80)
     
-    recommendations = optimizer.recommend_dishes_for_near_expiry(days_threshold=5)
+    recommendations = optimizer.recommend_dishes(max_recommendations=5)
     
     if len(recommendations) > 0:
         print(f"\n💡 {len(recommendations)} dishes can help use near-expiry materials")
         
         print("\n🍽️  SUGGESTED DISHES TO PREPARE:")
         print("-" * 80)
-        print(f"{'Dish Name':<35} {'Max Servings':>15} {'Materials Used':>15}")
+        print(f"{'Dish Name':<35} {'Max Servings':>15} {'Score':>15}")
         print("-" * 80)
         
         for idx, row in recommendations.head(10).iterrows():
             print(f"{row['dish_name']:<35} "
-                  f"{row['max_servings']:>15.0f} "
-                  f"{row['near_expiry_materials']:>15}")
+                  f"{row['max_servings_possible']:>15.0f} "
+                  f"{row['recommendation_score']:>15.2f}")
     else:
         print("\n✅ No urgent dish recommendations needed")
     

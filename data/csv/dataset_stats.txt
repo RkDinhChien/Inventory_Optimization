@@ -1,0 +1,69 @@
+
+======================================================================
+                    DATASET STATISTICS
+======================================================================
+
+📊 BASIC INFO:
+   • Total records: 2,395
+   • Date range: 2022-01-03 00:00:00 to 2024-10-07 00:00:00
+   • Number of days: 145
+   • Number of dishes: 17
+
+🍽️ DISH BREAKDOWN:
+
+   Top 10 Dishes by Total Orders:
+    1. Rice Bowl_Indian               : 20,874,063 orders
+    2. Beverages_Thai                 : 18,237,630 orders
+    3. Sandwich_Italian               : 17,636,782 orders
+    4. Beverages_Italian              : 13,953,970 orders
+    5. Salad_Italian                  : 10,944,336 orders
+    6. Pizza_Continental              : 7,383,720 orders
+    7. Beverages_Continental          : 5,943,046 orders
+    8. Other Snacks_Thai              : 4,766,293 orders
+    9. Starters_Thai                  : 4,649,122 orders
+   10. Extras_Thai                    : 3,984,979 orders
+
+📁 CATEGORY BREAKDOWN:
+   • Beverages            : 40,480,525.0 orders (580.0 records, avg: 69794.0)
+   • Biryani              : 631,848.0 orders (145.0 records, avg: 4357.6)
+   • Desert               : 1,940,754.0 orders (145.0 records, avg: 13384.5)
+   • Extras               : 3,984,979.0 orders (145.0 records, avg: 27482.6)
+   • Fish                 : 871,959.0 orders (87.0 records, avg: 10022.5)
+   • Other Snacks         : 4,766,293.0 orders (145.0 records, avg: 32871.0)
+   • Pasta                : 1,637,744.0 orders (145.0 records, avg: 11294.8)
+   • Pizza                : 7,383,720.0 orders (145.0 records, avg: 50922.2)
+   • Rice Bowl            : 20,874,063.0 orders (145.0 records, avg: 143959.1)
+   • Salad                : 10,944,336.0 orders (133.0 records, avg: 82288.2)
+   • Sandwich             : 17,636,782.0 orders (145.0 records, avg: 121633.0)
+   • Seafood              : 2,715,714.0 orders (145.0 records, avg: 18729.1)
+   • Soup                 : 1,039,646.0 orders (145.0 records, avg: 7170.0)
+   • Starters             : 4,649,122.0 orders (145.0 records, avg: 32062.9)
+
+🌍 CUISINE BREAKDOWN:
+   • Continental          : 16,914,439.0 orders (522.0 records, avg: 32403.1)
+   • Indian               : 25,792,544.0 orders (580.0 records, avg: 44469.9)
+   • Italian              : 44,172,832.0 orders (568.0 records, avg: 77769.1)
+   • Thai                 : 32,677,670.0 orders (725.0 records, avg: 45072.6)
+
+📈 TIME SERIES STATS:
+   • Average orders per day: 824534.4
+   • Max orders in a day: 1,303,457
+   • Min orders in a day: 380,065
+   • Standard deviation: 125670.3
+
+💰 PRICE STATS:
+   • Average checkout price: $333.03
+   • Average base price: $354.15
+   • Average discount: 5.8%
+
+🎯 PROMOTION STATS:
+   • Records with email promotion: 338 (14.1%)
+   • Records featured on homepage: 1,937 (80.9%)
+
+======================================================================
+✅ CONVERSION COMPLETE!
+
+📁 Output file: data/csv/orders_real.csv
+📊 File size: 0.20 MB
+🕐 Converted on: 2025-12-11 00:54:55
+======================================================================
