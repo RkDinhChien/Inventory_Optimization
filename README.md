@@ -236,6 +236,5 @@ MIT License
 
 ## Tác giả
 
-Luận văn thạc sĩ về ứng dụng Machine Learning trong F&B industry.
+Nguyễn Đình Chiến - Rykan
 
-Dataset thực tế và kết quả được verify để đảm bảo tính khả thi.
