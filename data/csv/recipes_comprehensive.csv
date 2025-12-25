@@ -1,0 +1,162 @@
+dish_name,material_name,quantity_needed,unit,notes
+Beverages_Continental,Coffee Beans,0.018,kg,18g per espresso-based drink
+Beverages_Continental,Fresh Milk,0.15,liter,150ml for latte/cappuccino
+Beverages_Continental,Sugar,0.012,kg,12g sweetener
+Beverages_Continental,Disposable Cup,1,pieces,Medium size cup with lid
+Beverages_Continental,Whipped Cream,0.02,kg,Optional topping
+Beverages_Indian,Black Tea Leaves,0.008,kg,8g per chai
+Beverages_Indian,Fresh Milk,0.12,liter,120ml for chai/masala tea
+Beverages_Indian,Sugar,0.015,kg,15g sweetener
+Beverages_Indian,Cardamom,0.002,kg,2g spices mix
+Beverages_Indian,Ginger,0.005,kg,5g fresh ginger
+Beverages_Indian,Disposable Cup,1,pieces,Medium cup
+Beverages_Italian,Espresso Beans,0.014,kg,14g per espresso shot
+Beverages_Italian,Fresh Milk,0.08,liter,80ml for macchiato
+Beverages_Italian,Sugar,0.01,kg,10g
+Beverages_Italian,Disposable Cup,1,pieces,Small espresso cup
+Beverages_Thai,Thai Tea Mix,0.015,kg,15g Thai tea powder
+Beverages_Thai,Condensed Milk,0.04,liter,40ml sweet condensed milk
+Beverages_Thai,Evaporated Milk,0.06,liter,60ml evaporated milk
+Beverages_Thai,Sugar,0.015,kg,15g additional sweetener
+Beverages_Thai,Ice,0.15,kg,150g crushed ice
+Beverages_Thai,Disposable Cup,1,pieces,Large cup with straw
+Biryani_Indian,Basmati Rice,0.15,kg,150g long-grain basmati
+Biryani_Indian,Chicken Thighs,0.2,kg,200g boneless chicken
+Biryani_Indian,Onions,0.08,kg,80g caramelized onions
+Biryani_Indian,Tomatoes,0.06,kg,60g fresh tomatoes
+Biryani_Indian,Yogurt,0.05,kg,50g plain yogurt
+Biryani_Indian,Biryani Masala,0.015,kg,15g spice blend
+Biryani_Indian,Saffron,0.0005,kg,0.5g saffron strands
+Biryani_Indian,Ghee,0.025,kg,25g clarified butter
+Biryani_Indian,Mint Leaves,0.01,kg,10g fresh mint
+Biryani_Indian,Coriander Leaves,0.01,kg,10g fresh cilantro
+Biryani_Indian,Fried Onions,0.015,kg,15g crispy fried onions
+Biryani_Indian,Bay Leaves,0.001,kg,1-2 leaves
+Desert_Indian,All Purpose Flour,0.08,kg,80g maida flour
+Desert_Indian,Sugar,0.06,kg,60g for gulab jamun/kheer
+Desert_Indian,Milk Powder,0.04,kg,40g for richness
+Desert_Indian,Ghee,0.03,kg,30g for frying/cooking
+Desert_Indian,Cardamom Powder,0.003,kg,3g flavoring
+Desert_Indian,Rose Water,0.005,liter,5ml essence
+Desert_Indian,Saffron,0.0003,kg,0.3g for color
+Desert_Indian,Pistachios,0.01,kg,10g chopped nuts
+Desert_Indian,Almonds,0.01,kg,10g sliced almonds
+Desert_Indian,Vegetable Oil,0.05,liter,50ml for deep frying
+Extras_Thai,Jasmine Rice,0.08,kg,80g steamed rice side
+Extras_Thai,Spring Roll Wrappers,0.03,kg,30g rice paper
+Extras_Thai,Vegetables Mix,0.05,kg,50g carrots/cabbage
+Extras_Thai,Sweet Chili Sauce,0.03,liter,30ml dipping sauce
+Extras_Thai,Vegetable Oil,0.04,liter,40ml for frying
+Extras_Thai,Garlic,0.008,kg,8g minced garlic
+Extras_Thai,Soy Sauce,0.01,liter,10ml seasoning
+Fish_Continental,Fish Fillet,0.18,kg,180g salmon/cod fillet
+Fish_Continental,Butter,0.02,kg,20g for pan-searing
+Fish_Continental,Lemon,0.03,kg,30g fresh lemon
+Fish_Continental,Dill,0.005,kg,5g fresh dill
+Fish_Continental,White Wine,0.03,liter,30ml for sauce
+Fish_Continental,Garlic,0.008,kg,8g minced
+Fish_Continental,Olive Oil,0.015,liter,15ml
+Fish_Continental,Salt,0.003,kg,3g seasoning
+Fish_Continental,Black Pepper,0.002,kg,2g ground pepper
+Fish_Continental,Capers,0.01,kg,10g optional garnish
+Other Snacks_Thai,Rice Flour,0.06,kg,60g for coating
+Other Snacks_Thai,Chicken Wings,0.15,kg,150g wings/drumettes
+Other Snacks_Thai,Fish Sauce,0.01,liter,10ml Thai seasoning
+Other Snacks_Thai,Garlic,0.01,kg,10g minced
+Other Snacks_Thai,Sugar,0.015,kg,15g for glaze
+Other Snacks_Thai,Lime,0.02,kg,20g fresh lime
+Other Snacks_Thai,Thai Chili,0.005,kg,5g bird's eye chili
+Other Snacks_Thai,Vegetable Oil,0.06,liter,60ml for deep frying
+Other Snacks_Thai,Coriander,0.008,kg,8g fresh cilantro
+Other Snacks_Thai,Peanuts,0.015,kg,15g crushed peanuts
+Pasta_Italian,Pasta,0.12,kg,120g dry pasta
+Pasta_Italian,Tomato Sauce,0.1,liter,100ml marinara sauce
+Pasta_Italian,Olive Oil,0.02,liter,20ml extra virgin
+Pasta_Italian,Garlic,0.01,kg,10g minced garlic
+Pasta_Italian,Basil,0.008,kg,8g fresh basil leaves
+Pasta_Italian,Parmesan Cheese,0.025,kg,25g grated
+Pasta_Italian,Cherry Tomatoes,0.05,kg,50g halved
+Pasta_Italian,Red Pepper Flakes,0.002,kg,2g optional heat
+Pasta_Italian,Salt,0.003,kg,3g for pasta water
+Pasta_Italian,Black Pepper,0.002,kg,2g freshly ground
+Pizza_Continental,Pizza Dough,0.25,kg,250g fresh dough
+Pizza_Continental,Tomato Sauce,0.08,liter,80ml pizza sauce
+Pizza_Continental,Mozzarella Cheese,0.12,kg,120g shredded
+Pizza_Continental,Pepperoni,0.05,kg,50g sliced
+Pizza_Continental,Bell Peppers,0.04,kg,40g mixed colors
+Pizza_Continental,Mushrooms,0.04,kg,40g sliced
+Pizza_Continental,Onions,0.03,kg,30g sliced
+Pizza_Continental,Olive Oil,0.01,liter,10ml drizzle
+Pizza_Continental,Oregano,0.003,kg,3g dried herbs
+Pizza_Continental,Parmesan Cheese,0.015,kg,15g grated
+Pizza_Continental,Black Olives,0.02,kg,20g sliced
+Rice Bowl_Indian,Basmati Rice,0.15,kg,150g cooked rice base
+Rice Bowl_Indian,Chicken Breast,0.15,kg,150g grilled chicken
+Rice Bowl_Indian,Onions,0.05,kg,50g sautéed
+Rice Bowl_Indian,Tomatoes,0.05,kg,50g diced
+Rice Bowl_Indian,Bell Peppers,0.04,kg,40g mixed
+Rice Bowl_Indian,Curry Sauce,0.08,liter,80ml tikka masala sauce
+Rice Bowl_Indian,Yogurt,0.03,kg,30g raita
+Rice Bowl_Indian,Garam Masala,0.005,kg,5g spice blend
+Rice Bowl_Indian,Vegetable Oil,0.02,liter,20ml cooking oil
+Rice Bowl_Indian,Coriander Leaves,0.008,kg,8g garnish
+Rice Bowl_Indian,Cucumber,0.03,kg,30g sliced
+Salad_Italian,Lettuce Mix,0.1,kg,100g romaine/arugula
+Salad_Italian,Cherry Tomatoes,0.06,kg,60g halved
+Salad_Italian,Cucumber,0.05,kg,50g sliced
+Salad_Italian,Red Onions,0.02,kg,20g thinly sliced
+Salad_Italian,Parmesan Cheese,0.02,kg,20g shaved
+Salad_Italian,Croutons,0.025,kg,25g toasted bread cubes
+Salad_Italian,Olive Oil,0.025,liter,25ml for dressing
+Salad_Italian,Balsamic Vinegar,0.015,liter,15ml
+Salad_Italian,Garlic,0.005,kg,5g minced
+Salad_Italian,Salt,0.002,kg,2g
+Salad_Italian,Black Pepper,0.002,kg,2g
+Salad_Italian,Basil,0.005,kg,5g fresh leaves
+Sandwich_Italian,Ciabatta Bread,0.15,kg,150g Italian bread
+Sandwich_Italian,Mozzarella Cheese,0.06,kg,60g fresh
+Sandwich_Italian,Prosciutto,0.05,kg,50g Italian ham
+Sandwich_Italian,Tomatoes,0.05,kg,50g sliced
+Sandwich_Italian,Basil Leaves,0.01,kg,10g fresh
+Sandwich_Italian,Olive Oil,0.015,liter,15ml drizzle
+Sandwich_Italian,Balsamic Glaze,0.01,liter,10ml reduction
+Sandwich_Italian,Arugula,0.02,kg,20g rocket leaves
+Sandwich_Italian,Salt,0.002,kg,2g
+Sandwich_Italian,Black Pepper,0.002,kg,2g
+Seafood_Continental,Shrimp,0.15,kg,150g large shrimp
+Seafood_Continental,Butter,0.025,kg,25g garlic butter
+Seafood_Continental,Garlic,0.01,kg,10g minced
+Seafood_Continental,White Wine,0.04,liter,40ml for sauce
+Seafood_Continental,Lemon,0.03,kg,30g juice
+Seafood_Continental,Parsley,0.008,kg,8g fresh chopped
+Seafood_Continental,Olive Oil,0.02,liter,20ml
+Seafood_Continental,Red Pepper Flakes,0.003,kg,3g
+Seafood_Continental,Salt,0.003,kg,3g
+Seafood_Continental,Black Pepper,0.002,kg,2g
+Seafood_Continental,Bread,0.06,kg,60g crusty bread for dipping
+Soup_Thai,Chicken Stock,0.3,liter,300ml rich broth
+Soup_Thai,Coconut Milk,0.15,liter,150ml creamy coconut
+Soup_Thai,Chicken Breast,0.1,kg,100g sliced
+Soup_Thai,Mushrooms,0.05,kg,50g straw mushrooms
+Soup_Thai,Lemongrass,0.015,kg,15g stalks
+Soup_Thai,Galangal,0.01,kg,10g Thai ginger
+Soup_Thai,Kaffir Lime Leaves,0.003,kg,3-4 leaves
+Soup_Thai,Thai Chilies,0.008,kg,8g bird's eye
+Soup_Thai,Fish Sauce,0.015,liter,15ml seasoning
+Soup_Thai,Lime Juice,0.02,liter,20ml fresh
+Soup_Thai,Coriander,0.008,kg,8g garnish
+Soup_Thai,Cherry Tomatoes,0.03,kg,30g halved
+Starters_Thai,Chicken Breast,0.12,kg,120g for satay
+Starters_Thai,Coconut Milk,0.05,liter,50ml for marinade
+Starters_Thai,Peanut Butter,0.04,kg,40g for sauce
+Starters_Thai,Soy Sauce,0.02,liter,20ml
+Starters_Thai,Fish Sauce,0.01,liter,10ml
+Starters_Thai,Lime Juice,0.015,liter,15ml
+Starters_Thai,Brown Sugar,0.02,kg,20g
+Starters_Thai,Garlic,0.01,kg,10g minced
+Starters_Thai,Ginger,0.008,kg,8g minced
+Starters_Thai,Curry Powder,0.008,kg,8g
+Starters_Thai,Vegetable Oil,0.03,liter,30ml
+Starters_Thai,Cucumber,0.04,kg,40g for salad
+Starters_Thai,Red Onions,0.02,kg,20g
+Starters_Thai,Bamboo Skewers,4,pieces,For satay presentation

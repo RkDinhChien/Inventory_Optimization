@@ -445,6 +445,10 @@ class InventoryOptimizer:
             max_servings = float('inf')
             urgency_bonus = 0
             
+            # Track expiry material usage ratio
+            expiry_material_cost = 0  # Cost of near-expiry materials used
+            total_material_cost = 0   # Total cost of all materials
+            
             # Analyze each required material
             for _, recipe_row in dish_recipes.iterrows():
                 material_name = recipe_row['material_name']
@@ -463,14 +467,19 @@ class InventoryOptimizer:
                 max_servings = min(max_servings, possible_servings)
                 
                 # Calculate cost for this material
-                total_cost += qty_needed * cost_per_unit
+                material_cost = qty_needed * cost_per_unit
+                total_cost += material_cost
+                total_material_cost += material_cost
                 
                 # Material availability score (higher stock = higher score)
                 stock_ratio = current_stock / (material_info['minimum_stock_level'] + 1)
                 score_components['material_availability'] += min(stock_ratio, 2.0)
                 
-                # Expiry urgency bonus (higher bonus for using near-expiry materials)
+                # Track expiry material cost ratio
                 if material_name in expiry_materials:
+                    expiry_material_cost += material_cost
+                    
+                    # Expiry urgency bonus (higher bonus for using near-expiry materials)
                     expiry_info = near_expiry[near_expiry['material_name'] == material_name]
                     if not expiry_info.empty:
                         days_until_expiry = expiry_info['days_until_expiry'].min()
@@ -479,6 +488,15 @@ class InventoryOptimizer:
             
             if max_servings <= 0:
                 continue  # Can't make this dish
+            
+            # Calculate expiry material usage ratio (%)
+            expiry_material_ratio = (expiry_material_cost / total_material_cost * 100) if total_material_cost > 0 else 0
+            
+            # IMPORTANT: Only recommend if expiry material ratio is significant (>= 30%)
+            # This avoids recommending dishes that barely use expiring materials
+            if expiry_material_ratio > 0 and expiry_material_ratio < 30:
+                # If uses expiring materials but ratio is too low, reduce urgency bonus significantly
+                urgency_bonus *= 0.2  # Reduce by 80%
             
             # Normalize material availability score
             score_components['material_availability'] /= len(dish_recipes)
@@ -506,6 +524,7 @@ class InventoryOptimizer:
                 'dish_name': dish,
                 'max_servings_possible': max_servings,
                 'cost_per_serving': round(cost_per_serving, 2),
+                'expiry_material_ratio': round(expiry_material_ratio, 2),  # NEW: Show ratio
                 'recommendation_score': round(overall_score, 2),
                 'material_availability_score': round(score_components['material_availability'], 2),
                 'expiry_urgency_score': round(score_components['expiry_urgency'], 2),
